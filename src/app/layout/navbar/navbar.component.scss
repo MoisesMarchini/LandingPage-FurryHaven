@@ -1,0 +1,33 @@
+:host {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+
+nav {
+  background-color: transparent;
+}
+
+.nav-container {
+  height: var(--nav-height);
+}
+
+ul {
+  list-style-type: none;
+}
+
+.nav-link {
+  --fx-color: var(--bs-body-color);
+  position: relative;
+  overflow: hidden;
+  padding: .5rem .75rem;
+  opacity: .5;
+  &.active, &:hover{
+    opacity: 1;
+  }
+  &.active{
+    --fx-color: var(--bs-primary);
+    color: var(--bs-primary);
+  }
+}

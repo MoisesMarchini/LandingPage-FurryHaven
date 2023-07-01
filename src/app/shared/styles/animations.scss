@@ -1,0 +1,27 @@
+:root{
+  --default-anim-duration: 250ms;
+}
+
+*, *::before, *::after{
+  transition-duration: var(--default-anim-duration);
+}
+
+.border-anim{
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: var(--fx-color);
+    height: 2px;
+    width: 100%;
+    left: 0;
+    transform: translateX(-105%);
+  }
+  &.at-bottom{
+    &::after {
+      bottom: 0;
+    }
+    &:hover::after, &.active::after{
+      transform: translateX(0%);
+    }
+  }
+}
