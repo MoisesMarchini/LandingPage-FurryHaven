@@ -1,5 +1,5 @@
 <app-banner></app-banner>
-<section class="">
+<section id="section_intro" class="">
   <div class="container">
     <h2 class="fw-semibold">Encontre seu Amigo Peludo no FurryHaven</h2>
     <h5 class="fw-semiboldd">Um Lar de Amor para Animais Resgatados</h5>
@@ -10,7 +10,7 @@
     <p>Junte-se a nós nesta missão de amor pelos animais. Venha visitar o FurryHaven, conheça nossos animais e experimente a alegria de adotar um amigo peludo. Sua contribuição fará a diferença na vida desses animais e encherá seu coração de gratidão e amor.</p>
   </div>
 </section>
-<section class="bg-secondary bg-opacity-10">
+<section id="section_testimonials" class="bg-secondary bg-opacity-10">
   <div class="container">
     <h2 class="fw-semibold mb-4">{{cardsTitle}}</h2>
     <app-grid-cards [cardsList]="cardsList"></app-grid-cards>
@@ -18,12 +18,39 @@
     <p class="m-0">Ao adotar um animal do FurryHaven, você estará contribuindo para essas histórias de sucesso. Venha conhecer nossos animais disponíveis para adoção e faça parte desta jornada incrível de transformação e amor.</p>
   </div>
 </section>
-<section class="">
+<section id="section_gallery" class="">
   <div class="container">
     <h2 class="fw-semibold mb-4">Conheça Nossos Amigos Peludos</h2>
     <p class="mb-3">Nossa galeria de fotos apresenta uma variedade encantadora de animais resgatados que estão em busca de um lar amoroso. Cada um deles possui uma personalidade única e espera ansiosamente por alguém especial para compartilhar amor e alegria. Explore a galeria abaixo e conheça alguns dos nossos amigos peludos disponíveis para adoção:</p>
     <app-slider></app-slider>
     <p class="mt-3">Esses amigos peludos estão esperando por alguém como você para lhes dar um novo começo. Cada animal tem suas próprias necessidades e requisitos, mas todos eles compartilham a capacidade de oferecer amor incondicional e fidelidade.</p>
     <p>A adoção de um animal do FurryHaven não apenas transformará a vida do animal, mas também preencherá a sua vida com amor e felicidade. Venha conhecer nossos amigos peludos pessoalmente e descubra o vínculo especial que só pode ser criado por meio da adoção.</p>
+  </div>
+</section>
+<section id="section_howToHelp" class="bg-primary bg-opacity-10">
+  <div class="container">
+    <h2 class="fw-semibold mb-4">Faça a Diferença na Vida dos Animais Resgatados</h2>
+    <p>No FurryHaven, acreditamos que cada pessoa pode desempenhar um papel importante na vida dos animais resgatados. Se você deseja ajudar, existem várias maneiras de fazer a diferença:</p>
+    <ul>
+      <ng-container *ngFor="let item of howToHelpList">
+        <li>
+          <h6 class="fw-semibold mb-1">
+            {{item.title}}
+          </h6>
+          <p class="small">
+            {{item.body}}
+          </p>
+        </li>
+      </ng-container>
+    </ul>
+    <p>Junte-se a nós na missão de fornecer um lar de amor e esperança para animais resgatados. Cada gesto de apoio faz a diferença e ajuda a transformar vidas.</p>
+  </div>
+</section>
+<section id="section_contact" class="">
+  <div class="container">
+    <h2 class="fw-semibold mb-4">Vamos Conectar!</h2>
+    <p>Queremos ouvir você! Se você tem alguma pergunta, sugestão ou gostaria de obter mais informações sobre a adoção de um animal do FurryHaven, estamos aqui para ajudar. Entre em contato conosco por meio dos seguintes meios:</p>
+    <app-grid-cards [cardsList]="contactList" [options]="smalIconsOptions"></app-grid-cards>
+    <p class="mt-5">Estamos ansiosos para ouvir de você e ajudá-lo a encontrar o animal perfeito para adoção ou responder a qualquer dúvida que você possa ter. Juntos, podemos fazer a diferença na vida dos animais resgatados e promover a conscientização sobre a importância da adoção responsável.</p>
   </div>
 </section>

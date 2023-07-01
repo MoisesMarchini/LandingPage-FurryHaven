@@ -1,14 +1,24 @@
-<div class="card p-3 h-100 d-flex flex-column align-items-center">
-  <div class="icon-container my-2">
-
+<div
+class="card p-3 h-100 d-flex flex-row gap-3 border-2 border">
+  <ng-container *ngIf="model?.imgPath">
+    <div
+    [style]="'--portrait-size: '+(options?.imgSize?? 'inherit')"
+    [class.rounded-0]="options?.squared === true"
+    [class]="'img-container '+options?.paddingClass">
+      <img [src]="model?.imgPath">
+    </div>
+  </ng-container>
+  <div class="card-content d-flex flex-column">
+    <h4 class="fw-semibold">
+      {{model?.title}}
+    </h4>
+    <ng-container *ngIf="model?.subtitle">
+      <h5 class="fw-semibold text-muted fs-6 mb-1">
+        {{model?.subtitle}}
+      </h5>
+    </ng-container>
+    <p class="small">
+      {{model?.description}}
+    </p>
   </div>
-  <h4 class="fw-semibold mt-2">
-    {{model?.title}}
-  </h4>
-  <h5 class="fw-semibold text-muted">
-    {{model?.subtitle}}
-  </h5>
-  <p class="small">
-    {{model?.description}}
-  </p>
 </div>

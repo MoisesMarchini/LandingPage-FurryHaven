@@ -1,0 +1,11 @@
+.list-inline-item .btn{
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-content: center;
+}
+
+.list-inline-item .btn img{
+  height: 1rem;
+  object-fit: cover;
+}

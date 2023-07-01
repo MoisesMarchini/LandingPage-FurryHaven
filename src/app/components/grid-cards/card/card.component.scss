@@ -1,6 +1,40 @@
-.icon-container{
-  width: 9rem;
-  height: 9rem;
+.card {
+  --portrait-size: 3rem;
+  --border-color: none;//var(--bs-border-color);
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--portrait-size);
+    background-color: var(--border-color);
+    z-index: 0;
+  }
+}
+
+.card-content{
+  position: relative;
+  z-index: 1;
+}
+
+.img-container{
+  position: relative;
+  z-index: 1;
+  width: var(--portrait-size);
+  height: var(--portrait-size);
   border-radius: 50%;
-  background-color: wheat;
+  background-color: var(--border-color);
+  outline: 4px solid var(--border-color);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

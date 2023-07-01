@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CardModel } from './card/card-model';
+import { CardModel, CardOptions } from './card/card-model';
 
 @Component({
   selector: 'app-grid-cards',
@@ -8,6 +8,7 @@ import { CardModel } from './card/card-model';
 })
 export class GridCardsComponent implements OnInit {
   @Input() cardsList: CardModel[] = [{title: 'Teste'}];
+  @Input() options?: CardOptions;
 
   constructor() { }
 

@@ -1,7 +1,13 @@
 export interface CardModel {
   title: string,
   subtitle?: string,
-  iconImgPath?: string,
+  imgPath?: string,
   description?: string,
   linkUrl?: string,
+}
+
+export interface CardOptions {
+  imgSize?: string,
+  squared?: boolean,
+  paddingClass?: string,
 }

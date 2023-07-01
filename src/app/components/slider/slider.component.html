@@ -1,20 +1,23 @@
-<div class="w-100 slider-container overflow-hidden">
+<div class="w-100 slider-container overflow-hidden" (mouseenter)="pauseTimer()" (mouseleave)="initTimer(false)" >
   <button type="button" class="control control-left" (click)="increaseSlider(-1)">
-    LT
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
   </button>
   <button type="button" class="control control-right" (click)="increaseSlider(1)">
-    RT
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
   </button>
   <ul>
     <ng-container *ngFor="let slide of slides; let i = index">
-      <li class="point" [class.active]="currentSliderIndex === i"></li>
+      <li class="point d-flex shadow-sm" [class.active]="currentSliderIndex === i">
+        <button type="button" class="border-0 opacity-0 w-100 h-100" (click)="currentSliderIndex = i"></button>
+      </li>
     </ng-container>
   </ul>
   <ng-container *ngFor="let slide of slides; let i = index">
-    <div 
-    [class.active]="currentSliderIndex === i" 
+    <img
+    class="slide"
+    [class.active]="currentSliderIndex === i"
     [class.next]="nextSlide() === i"
     [class.prev]="prevSlide() === i"
-    [class]="'slide '+slide"></div>
+    [src]="slide">
   </ng-container>
 </div>
