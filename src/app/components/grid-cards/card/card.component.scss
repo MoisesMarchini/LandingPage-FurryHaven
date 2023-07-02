@@ -1,6 +1,6 @@
 .card {
   --portrait-size: 3rem;
-  --border-color: none;//var(--bs-border-color);
+  --bs-border-color: var(--bs-dark);
   position: relative;
   &::before{
     content: '';
@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     height: var(--portrait-size);
-    background-color: var(--border-color);
+    background-color: var(--bs-border-color);
     z-index: 0;
   }
 }
@@ -25,15 +25,14 @@
   width: var(--portrait-size);
   height: var(--portrait-size);
   border-radius: 50%;
-  background-color: var(--border-color);
-  outline: 4px solid var(--border-color);
+  background-color: white;
+  outline: 2px solid var(--bs-border-color);
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   img {
-    width: 100%;
     height: 100%;
     object-fit: cover;
   }

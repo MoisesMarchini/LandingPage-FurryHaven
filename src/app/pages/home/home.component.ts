@@ -7,7 +7,13 @@ import { CardModel, CardOptions } from 'src/app/components/grid-cards/card/card-
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  cardsTitle = 'Histórias Inspiradoras de Animais Resgatados';
+  sectionTitles = [
+    'Sobre Nós',
+    'Depoimentos de Amor',
+    'Conheça nossos Amigos Peludos',
+    'Faça a diferença',
+    'Fique conectado'
+  ]
   readonly iconsPath = '/assets/images/icons/'
   readonly testimonialsPath = '/assets/images/testimonials/'
 
@@ -59,29 +65,29 @@ export class HomeComponent implements OnInit {
     {
       title: 'Telefone',
       imgPath: this.iconsPath+'phone-solid.svg',
-      description: 'Ligue para o nosso número de contato, disponível de segunda a sexta-feira, das 9h às 17h. Nossa equipe estará pronta para fornecer informações adicionais e orientações sobre o processo de adoção.'
+      description: 'Ligue para o nosso número de contato, disponível de segunda a sexta-feira, das 9h às 17h.'
     },
     {
       title: 'E-mail',
       imgPath: this.iconsPath+'envelope-solid.svg',
-      description: 'Envie-nos um e-mail para info@furryhaven.com e teremos o prazer de responder a todas as suas perguntas. Nossa equipe responderá o mais breve possível, geralmente em até 24 horas.'
+      description: "Nos envie um e-mail para <a class='fw-semibold text-primary' href='#'>info@furryhaven.com</a> e teremos o prazer de responder a todas as suas perguntas."
     },
     {
       title: 'Visita Presencial',
       imgPath: this.iconsPath+'house-solid.svg',
-      description: 'Agende uma visita ao nosso abrigo para conhecer nossos animais pessoalmente. Nossa equipe terá prazer em recebê-lo, mostrar as instalações e ajudá-lo a encontrar o amigo peludo perfeito para você.'
+      description: 'Agende uma visita ao nosso abrigo para conhecer nossos animais pessoalmente.'
     },
     {
       title: 'Mídias Sociais',
       imgPath: this.iconsPath+'hashtag-solid.svg',
-      description: 'Siga-nos em nossas redes sociais para ficar por dentro das últimas notícias, eventos de adoção e histórias inspiradoras de animais resgatados. Conecte-se conosco no Facebook, Instagram e Twitter para fazer parte da nossa comunidade apaixonada por animais.'
+      description: 'Nos siga em nossas redes sociais para ficar por dentro das últimas notícias e eventos de adoção.'
     }
   ]
 
   smalIconsOptions: CardOptions = {
-    imgSize: '1.75rem',
-    squared: true,
-    paddingClass: 'p-1'
+    imgSize: '2.75rem',
+    padding: '.75rem',
+    maxColumns: 2
   }
 
   constructor() { }

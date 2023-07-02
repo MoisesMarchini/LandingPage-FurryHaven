@@ -1,24 +1,22 @@
 <div
-class="card p-3 h-100 d-flex flex-row gap-3 border-2 border">
+class="card p-3 h-100 d-flex flex-row gap-3 border-2 border shadow">
   <ng-container *ngIf="model?.imgPath">
     <div
-    [style]="'--portrait-size: '+(options?.imgSize?? 'inherit')"
+    [style]="'--portrait-size: '+(options?.imgSize?? 'inherit')+'; padding: '+(options?.padding?? 0)"
     [class.rounded-0]="options?.squared === true"
-    [class]="'img-container '+options?.paddingClass">
+    [class]="'img-container '">
       <img [src]="model?.imgPath">
     </div>
   </ng-container>
   <div class="card-content d-flex flex-column">
-    <h4 class="fw-semibold">
+    <h4 class="fw-semibold text-bg-dark">
       {{model?.title}}
     </h4>
     <ng-container *ngIf="model?.subtitle">
-      <h5 class="fw-semibold text-muted fs-6 mb-1">
+      <h5 class="fw-semibold fs-6 mt-1 mb-0">
         {{model?.subtitle}}
       </h5>
     </ng-container>
-    <p class="small">
-      {{model?.description}}
-    </p>
+    <p class="small mt-1 mb-0" [innerHTML]="model?.description"></p>
   </div>
 </div>

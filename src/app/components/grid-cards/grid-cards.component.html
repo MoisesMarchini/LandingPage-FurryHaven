@@ -1,4 +1,7 @@
-<div class="cards-container mt-3 text-dark">
+<div
+[style]="'--grid-columns: '+options?.maxColumns"
+[class.custom-md-grid]="options?.maxColumns"
+class="cards-container mt-3 text-dark">
   <ng-container *ngFor="let model of cardsList">
     <app-card [model]="model" [options]="options"></app-card>
   </ng-container>

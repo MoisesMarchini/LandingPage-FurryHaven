@@ -1,0 +1,21 @@
+$primary: #248327;
+$primary-light: #dfdfdf;
+$shiny: #FFC107;
+$body-bg: #F3F3F3;
+$body-color: #333333;
+
+$custom-colors: (
+  "primary": $primary,
+  "primary-light": $primary-light,
+  "shiny": $shiny
+);
+
+$theme-colors: map-merge-multiple($theme-colors, $custom-colors);
+
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+
+$utilities-bg: map-merge($utilities-colors, $theme-colors-rgb);
+
+$utilities-bg-colors: map-loop($utilities-bg, rgba-css-var, "$key", "bg");
+
+@import "node_modules/bootstrap/scss/bootstrap";

@@ -9,5 +9,6 @@ export interface CardModel {
 export interface CardOptions {
   imgSize?: string,
   squared?: boolean,
-  paddingClass?: string,
+  padding?: string,
+  maxColumns?: number
 }
