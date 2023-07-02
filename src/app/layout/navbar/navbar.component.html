@@ -1,15 +1,40 @@
-<nav class="w-100">
-  <div class="container nav-container d-flex align-items-center justify-content-between lh-1">
-    <div class="nav-left">
-      <h1 class="fs-5 m-0 fw-semibold">FurryHaven</h1>
-    </div>
-    <div class="nav-right">
-      <div class="nav-list-container d-none d-lg-block">
-        <ul class="nav-list d-flex gap-2 m-0 p-0 fw-semibold">
-          <li class="nav-item"><a class="nav-link border-anim at-bottom active" href="#home">Início</a></li>
-          <li class="nav-item"><a class="nav-link border-anim at-bottom" href="#about">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link border-anim at-bottom" href="#contact">Contato</a></li>
-        </ul>
+<nav class="w-100 navbar" [class.sticky-top]="isSticky">
+  <div class="nav-bg-container w-100">
+    <div class="container nav-container d-flex flex-column flex-lg-row align-items-lg-center justify-content-lg-between lh-1">
+      <div class="nav-left d-flex align-items-center justify-content-between">
+        <h1 class="fs-5 m-0 fw-semibold">FurryHaven</h1>
+        <button type="button"
+        style="width: 3rem; place-content: center;"
+        [class.d-none]="!collapse" 
+        [class.d-grid]="collapse"
+        class="btn d-lg-none border-0 p-0" (click)="collapse = !collapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button type="button"
+        style="width: 3rem; place-content: center;"
+        [class.d-none]="collapse" 
+        [class.d-grid]="!collapse"
+        class="btn btn-close d-lg-none border-0 p-0" (click)="collapse = !collapse"></button>
+      </div>
+      <div class="nav-right align-self-center">
+        <div
+        [class.d-none]="collapse"
+        class="nav-list-container d-lg-block py-4 py-lg-0">
+          <ul class="nav-list d-flex flex-column align-items-center flex-lg-row gap-2 m-0 p-0 fw-semibold">
+            <ng-container *ngFor="let item of sectionLinkNames; let i = index">
+              <li
+              class="nav-item">
+                <a
+                class="nav-link border-anim at-bottom "
+                [href]="'#'+sectionIds[i]"
+                (click)="closeNav()"
+                [class.active]="activeSection === (sectionIds[i])">
+                  {{item}}
+                </a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
